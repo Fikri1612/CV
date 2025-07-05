@@ -177,11 +177,11 @@ if (cursorDot && cursorOutline) {
     // 4. Interactive Terminal (Fungsi-fungsinya)
     const commands = {
         help: `Command Available:
-- <span style="color:#00A1FF;">whoami</span>     : Menampilkan bio singkat.
-- <span style="color:#00A1FF;">skills</span>     : Menampilkan daftar keahlian teknis.
-- <span style="color:#00A1FF;">projects</span>   : Menampilkan beberapa proyek unggulan.
-- <span style="color:#00A1FF;">contact</span>    : Menampilkan cara menghubungi saya.
-- <span style="color:#00A1FF;">clear</span>      : Membersihkan terminal.`,
+- <span style="color:#00A1FF;">whoami</span>     : Display information about me.
+- <span style="color:#00A1FF;">skills</span>     : Display my main skills and expertise.
+- <span style="color:#00A1FF;">projects</span>   : Display some of my important projects.
+- <span style="color:#00A1FF;">contact</span>    : Display my contact information.
+- <span style="color:#00A1FF;">clear</span>      : Clear Console.`,
         whoami: "I am Ahmad Fikri Fadhilah, a System Administrator and ICT Support with a passion for efficient automation and infrastructure. I like to solve problems and make the system run better.",
         skills: "Main expertise: Linux & Windows Server, Network (Cisco, Microtic), Virtualization (VMware, Proxmox), Cloud (AWS, Azure), Scripting (Bash, PowerShell), and Automation (Ansible, n8n).",
         projects: "Some important projects: Migration of physical servers to virtual, implementation of pfSense firewalls, and development of automation workflows with n8n. Type 'scroll up' to see more details on this page.",

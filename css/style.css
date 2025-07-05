@@ -15,8 +15,10 @@
     --text-color-dark: #E2E8F0;
     --header-bg-dark: rgba(15, 23, 42, 0.8);
 
-    --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Roboto', sans-serif;
+
+    /* ...variabel warna... */
+    --font-primary: 'Plus Jakarta Sans', sans-serif; /* Font untuk Headings */
+    --font-secondary: 'Inter', sans-serif; /* Font untuk Body Text */
 }
 
 /* Terapkan tema berdasarkan atribut data-theme */
