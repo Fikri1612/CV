@@ -237,48 +237,31 @@ if (cursorDot && cursorOutline) {
             }
         });
     }
-
-// --- FUNGSI MUSIK LATAR ---
+    
     const audio = document.getElementById('background-audio');
     const muteBtn = document.getElementById('mute-btn');
-    const muteIcon = muteBtn.querySelector('i');
-
-    // Coba putar audio saat halaman dimuat
-    if (audio) {
-        // Atur volume awal (0.0 - 1.0)
-        audio.volume = 0.3; 
-
-        // play() mengembalikan sebuah Promise
-        let playPromise = audio.play();
-
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                // Autoplay berhasil! Tidak perlu melakukan apa-apa.
-                console.log("Audio autoplay dimulai.");
-            }).catch(error => {
-                // Autoplay diblokir oleh browser.
-                console.log("Audio autoplay diblokir. Menunggu interaksi pengguna.");
-                // Ikon akan tetap 'volume-high' untuk mengundang klik pertama.
+    if (audio && muteBtn) {
+        const muteIcon = muteBtn.querySelector('i');
+        let isMusicInitialized = false; // Penanda untuk membedakan klik pertama
+            muteBtn.addEventListener('click', () => {
+                if (!isMusicInitialized) {
+                    audio.volume = 0.3;
+                    audio.play().catch(e => console.error("Gagal memulai audio:", e));
+                    audio.muted = false;
+                    isMusicInitialized = true; 
+                } else {
+                    audio.muted = !audio.muted;
+                }
+                if (audio.muted) {
+                    muteIcon.classList.remove('fa-volume-high');
+                    muteIcon.classList.add('fa-volume-xmark');
+                } else {
+                    muteIcon.classList.remove('fa-volume-xmark');
+                    muteIcon.classList.add('fa-volume-high');
+                }
             });
         }
-    }
-
-    // Tambahkan event listener untuk tombol mute/unmute
-    if (muteBtn) {
-        muteBtn.addEventListener('click', () => {
-            // Toggle properti 'muted' pada audio
-            audio.muted = !audio.muted;
-
-            // Ganti ikon berdasarkan status muted
-            if (audio.muted) {
-                muteIcon.classList.remove('fa-volume-high');
-                muteIcon.classList.add('fa-volume-xmark'); // Ikon mute
-            } else {
-                muteIcon.classList.remove('fa-volume-xmark');
-                muteIcon.classList.add('fa-volume-high'); // Ikon suara aktif
-            }
-        });
-    }
+    
     
     
     const contactForm = document.getElementById('contact-form');
